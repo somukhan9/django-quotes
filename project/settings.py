@@ -33,8 +33,7 @@ SECRET_KEY = 'django-insecure-6kj&bde=shm+pz$x8=uq+5#4#-(2-4du4_c@n!hda6vszn4x0#
 DEBUG = False
 
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '.onrender.com']
-CSRF_TRUSTED_ORIGINS = ['http://127.0.0.1:8080/',
-                        'https://sam-django-quotes.onrender.com/']
+CSRF_TRUSTED_ORIGINS = ['https://127.0.0.1:8000', 'https://*.onrender.com']
 
 
 # Application definition
@@ -53,10 +52,11 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
 
     "whitenoise.middleware.WhiteNoiseMiddleware",  # whitenoise middleware
+
+    'django.middleware.common.CommonMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
 
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',

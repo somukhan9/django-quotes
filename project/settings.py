@@ -51,6 +51,9 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+
+    "whitenoise.middleware.WhiteNoiseMiddleware",  # whitenoise middleware
+
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -87,15 +90,10 @@ WSGI_APPLICATION = 'project.wsgi.application'
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-
 #         'NAME': 'Quotes',
-
 #         'USER': 'dpg-cg1mnv5269vfsnssl0a0-a',
-
 #         'PASSWORD': '3mSJBAw53bhq7y4pZ38vdR3tugwfxbMu',
-
 #         'HOST': '0.0.0.0',
-
 #         'PORT': '5432',
 #     }
 # }
@@ -141,11 +139,15 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
-# STATICFILES_DIRS = [
-#     BASE_DIR / 'static'
-# ]
+STATICFILES_DIRS = [
+    BASE_DIR / 'static'
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"

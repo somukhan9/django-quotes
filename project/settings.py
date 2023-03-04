@@ -34,8 +34,8 @@ DEBUG = False
 
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '.onrender.com']
 
-CSRF_TRUSTED_ORIGINS = ['https://127.0.0.1:8000',
-                        'https://sam-django-quotes.onrender.com/']
+# CSRF_TRUSTED_ORIGINS = ['https://127.0.0.1:8000',
+#                         'https://sam-django-quotes.onrender.com/']
 
 
 # Application definition

@@ -1,0 +1,6 @@
+.env
+Pipfile
+Pipfile.lock
+venv/
+lib/
+bin/
